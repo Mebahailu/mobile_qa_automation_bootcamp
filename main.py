@@ -27,8 +27,6 @@ class Test01Android():
     @pytest.mark.parametrize('os', [('android')])
     def test_01(self, os):
         Test01Android.main_os = os
-        # assert self.current_called_process() == 'Andriod'
-        # logging.info(f'{self.__class__.__name__}, {self.caller_name}')
         assert self.main_os == 'android'
         logging.info(
             f'{Test01Android.caller_name}, OS = {Test01Android.main_os}')
