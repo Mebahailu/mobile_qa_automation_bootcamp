@@ -4,14 +4,10 @@ import logging
 from appium.webdriver.webdriver import WebDriver
 
 
-# basic logger configrations
-# log level is info
-
 logging.basicConfig(level=logging.INFO,
                     format='%(asctime)s: %(levelname)s : %(message)s')
 
 
-# just creating webdriver and initializing driver methods
 class WebCommon(WebDriver):
     def __init__(self):
         super().__init__()
