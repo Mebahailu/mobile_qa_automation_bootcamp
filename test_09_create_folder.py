@@ -95,6 +95,26 @@ def test_09_create_folder():
 
         assert elem.text == "test_folder"
 
+        WebDriverWait(driver, 20).until(
+            EC.presence_of_element_located(
+                (
+                    By.XPATH,
+                    "//android.widget.TextView[@resource-id='com.alphainventor.filemanager:id/text' and @text='Delete']",
+                )
+            )
+        )
+        driver.find_element(
+            By.XPATH,
+            "//android.widget.TextView[@resource-id='com.alphainventor.filemanager:id/text' and @text='Delete']",
+        ).click()
+
+        WebDriverWait(driver, 20).until(
+            EC.presence_of_element_located(
+                (By.XPATH, "//android.widget.Button[@text='OK']")
+            )
+        )
+        driver.find_element(By.XPATH, "//android.widget.Button[@text='OK']").click()
+
         WebDriverWait(driver, 6000)
     except Exception as e:
         print(e)
